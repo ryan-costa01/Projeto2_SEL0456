@@ -34,7 +34,7 @@ class Usuario:
 # Imprime os usuários salvos
 def __str__(self):
     """Imprime os usuários salvos"""
-    print(f"Nome: {self.nome} Hierarquia: {self.hierarquia}")
+    return f"Nome: {self.nome} Hierarquia: {self.hierarquia}"
 
 # Lista para armazenar usuários
 usuarios = []
@@ -70,10 +70,9 @@ def select_hierarquia(nome_usuario, senha_inserida, op_hierarquia):
             adicionar_usuario(nome_usuario, senha_inserida, hierarquia)
 
             break
-        else:
-            print("Hierarquia inválida. ")
-            print("As hierarquias válidas são 'MasterAdmin', 'Admin' e 'Padrão'.")
-            op_hierarquia = input('Tente novamente:')
+        print("Hierarquia inválida. ")
+        print("As hierarquias válidas são 'MasterAdmin', 'Admin' e 'Padrão'.")
+        op_hierarquia = input('Tente novamente:')
 
 # Função para analisar o nome de usuário
 def analisar_nome(nome):
@@ -137,8 +136,9 @@ def menu():
                 
         # Imprimir informações dos usuários
         elif opcao == "3":
+            print("Usuários existentes:")
             for usuario in usuarios:
-                __str__(usuario)
+                print(f"Nome: {usuario.nome}, Hierarquia: {usuario.hierarquia}")
         
         # Fechar Programa
         elif opcao == "4":
