@@ -28,13 +28,10 @@ class Usuario:
         """Verificar se a senha inserida corresponde ao hash armazenado"""
         senha_hash_inserida = self._hash_senha(senha_inserida)
         return senha_hash_inserida == self.hash_senha
+    
     def __str__(self):
-        return self.__class__.__name__
-
-# Imprime os usuários salvos
-def __str__(self):
-    """Imprime os usuários salvos"""
-    return f"Nome: {self.nome} Hierarquia: {self.hierarquia}"
+        """Imprime os usuários salvos"""
+        return f"Nome: {self.nome} Hierarquia: {self.hierarquia}"
 
 # Lista para armazenar usuários
 usuarios = []
@@ -103,11 +100,12 @@ usuarios = carregar_usuarios()
 def menu():
     """"Menu de opções"""
     while True:
-        print("Opções:")
+        print("------------------------------")
         print("1. Adicionar novo usuário")
         print("2. Usar usuário existente")
         print("3. Usuários exixtentes")
         print("4. Fechar Programa")
+        print("------------------------------")
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
@@ -138,7 +136,7 @@ def menu():
         elif opcao == "3":
             print("Usuários existentes:")
             for usuario in usuarios:
-                print(f"Nome: {usuario.nome}, Hierarquia: {usuario.hierarquia}")
+                print(usuario)
         
         # Fechar Programa
         elif opcao == "4":
